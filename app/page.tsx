@@ -220,15 +220,6 @@ export default function GradePortal() {
                     </div>
                 </header>
 
-                <div className={`w-full mb-8 p-5 border rounded-lg transition-colors ${theme === 'dark' ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
-                    <div className="flex items-start gap-4">
-                        <ShieldCheck className={`shrink-0 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`} size={20} />
-                        <div className="space-y-1 text-left">
-                            <h4 className={`text-xs font-bold uppercase tracking-wide ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>Security & Privacy Policy</h4>
-                            <p className={`text-xs leading-relaxed ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>This portal is an alternative frontend for grade viewing. We do not store any academic data. All information is fetched in real-time from official servers and discarded upon logout.</p>
-                        </div>
-                    </div>
-                </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                     <aside className="space-y-3">
