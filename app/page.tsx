@@ -187,9 +187,9 @@ export default function GradePortal() {
                     <div className={`mt-8 pt-6 border-t transition-colors ${theme === 'dark' ? 'border-gray-700' : 'border-gray-200'} text-center space-y-2`}>
                         <p className={`text-xs flex items-center justify-center gap-1 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
                             UPD by: <Instagram size={12} />{" "}
-                            <a href="https://www.instagram.com/brzy.y4/" target="_blank" rel="noopener noreferrer" className={`hover:underline font-semibold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>@brzy.y4</a>
+                            <a href="https://www.instagram.com/brzy.y4/" target="_blank" rel="noopener noreferrer" className={`hover:underline font-semibold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>brzy.y4</a>
                         </p>
-                        <p className={`text-[10px] ${theme === 'dark' ? 'text-gray-500' : 'text-gray-400'}`}>INSPO: @mrxception</p>
+                        <p className={`text-[10px] ${theme === 'dark' ? 'text-gray-500' : 'text-gray-400'}`}>CON.: @mrxception</p>
                     </div>
                 </div>
             </div>
