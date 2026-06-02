@@ -21,7 +21,7 @@ export async function POST(req: Request) {
         const rawText = await res.text();
         const decrypted = decrypt(rawText);
 
-        if (!decrypted) return NextResponse.json({ error: "Nigga" }, { status: 500 });
+        if (!decrypted) return NextResponse.json({ error: "error" }, { status: 500 });
         return NextResponse.json(decrypted);
     } catch (err: any) {
         return NextResponse.json({ error: err.message }, { status: 500 });
