@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { 
   LogOut, ShieldAlert, Award, Star, CheckCircle2, XCircle, ShieldCheck,
   Eye, EyeOff, Instagram, Sun, Moon
@@ -150,12 +151,17 @@ export default function GradePortal() {
             <div className={`flex items-center justify-center min-h-screen p-4 transition-colors ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
                 {modal.show && <ErrorModal msg={modal.msg} onClose={() => setModal({ show: false, msg: "" })} theme={theme} />}
                 <div className={`w-full max-w-sm p-8 border rounded-lg transition-colors ${theme === 'dark' ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
+                    
                     <div className="flex justify-between items-center mb-8">
-                        <h1 className="text-3xl font-bold text-center flex-1">ALT WITS</h1>
                         <button onClick={toggleTheme} className={`p-2 rounded-lg transition-colors ${theme === 'dark' ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-100 hover:bg-gray-200'}`}>
-                            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+                            {theme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
                         </button>
                     </div>
+                    
+                    <div className="flex justify-center mb-6">
+                        <Image src="/icon.png" alt="Alt Wits Logo" width={80} height={80} priority />
+                    </div>
+                    
                     <div className="space-y-4">
                         <input 
                             className={`w-full border p-4 rounded-lg outline-none transition-all ${theme === 'dark' ? 'bg-gray-700 border-gray-600 focus:border-white text-white placeholder-gray-400' : 'bg-white border-gray-300 focus:border-gray-900 focus:ring-1 focus:ring-gray-900 text-gray-900 placeholder-gray-500'}`}
