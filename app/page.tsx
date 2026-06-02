@@ -213,6 +213,7 @@ export default function GradePortal() {
             <div className="max-w-6xl mx-auto">
                 <header className={`flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4 p-6 border rounded-lg transition-colors ${theme === 'dark' ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
                     <div className="flex items-center gap-5">
+                        <Image src="/icon.png" alt="Alt Wits Logo" width={60} height={60} />
                         <div>
                             <h2 className="text-xl font-bold">{data.userInfo?.fullName}</h2>
                             <div className={`flex gap-3 text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}><span>ID: {data.userInfo?.studentId}</span></div>
@@ -260,9 +261,7 @@ export default function GradePortal() {
                                             </button>
                                         )}
                                     </div>
-                                    <button onClick={() => setShowGrades(!showGrades)} className={`flex items-center gap-3 px-5 py-2 rounded-lg text-xs font-bold uppercase tracking-wider border transition-all ${theme === 'dark' ? 'bg-gray-800 border-gray-600 text-white hover:bg-gray-700' : 'border-gray-300 text-gray-900 hover:bg-gray-100'}`}>
-                                        {showGrades ? <EyeOff size={16} /> : <Eye size={16} />}
-                                    </button>
+                                    
                                 </div>
 
                                 <div className={`border rounded-lg overflow-hidden transition-colors ${theme === 'dark' ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
@@ -271,7 +270,7 @@ export default function GradePortal() {
                                             <h3 className={`text-base font-bold uppercase tracking-wide ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{viewing.academicYear}</h3>
                                             <p className={`text-xs font-semibold uppercase mt-1 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>{viewing.term}</p>
                                         </div>
-                                        <div className="flex gap-4 text-xs font-mono font-bold">
+                                    <div className="flex gap-4 text-xs font-bold">
                                             <div className={`px-4 py-2 rounded-lg border transition-colors ${theme === 'dark' ? 'bg-gray-800 border-gray-600 text-white' : 'bg-white border-gray-300 text-gray-900'}`}>GWA: {viewing.gwa}</div>
                                             <div className={`px-4 py-2 rounded-lg border transition-colors ${theme === 'dark' ? 'bg-gray-800 border-gray-600 text-white' : 'bg-white border-gray-300 text-gray-900'}`}>Units: {viewing.totalUnits}</div>
                                         </div>
@@ -291,10 +290,10 @@ export default function GradePortal() {
                                                     const isFivePoint = finalGrade === "5" || finalGrade === "5.0";
                                                     return (
                                                         <tr key={i} className={`transition-colors ${theme === 'dark' ? 'hover:bg-gray-700' : 'hover:bg-gray-50'}`}>
-                                                            <td className={`px-6 py-4 font-mono text-xs font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{c.courseCode}</td>
+                                                            <td className={`px-6 py-4 text-xs font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{c.courseCode}</td>
                                                             <td className={`px-6 py-4 text-xs ${theme === 'dark' ? 'text-gray-300' : 'text-gray-900'}`}>{c.courseTitle}</td>
                                                             <td className={`px-6 py-4 text-center text-xs ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>{c.units}</td>
-                                                            <td className={`px-6 py-4 text-center font-mono text-xs transition-all ${!showGrades && midterm !== "-" ? 'blur-[3px] opacity-30 select-none' : (theme === 'dark' ? 'text-white' : 'text-gray-900')}`}>{midterm}</td>
+                                                            <td className={`px-6 py-4 text-center text-xs transition-all ${!showGrades && midterm !== "-" ? 'blur-[3px] opacity-30 select-none' : (theme === 'dark' ? 'text-white' : 'text-gray-900')}`}>{midterm}</td>
                                                             <td className={`px-6 py-4 text-center font-bold text-xs transition-all ${!showGrades ? 'blur-[3px] opacity-30 select-none' : (isFivePoint ? 'text-blue-500' : (theme === 'dark' ? 'text-white' : 'text-gray-900'))}`}>{finalGrade || "-"}</td>
                                                             <td className="px-6 py-4 text-center">
                                                                 <div className={`inline-flex items-center gap-2 text-xs font-bold px-3 py-1 rounded-lg uppercase ${isPassed ? (theme === 'dark' ? 'text-green-400 bg-green-950/30' : 'text-green-700 bg-green-50') : isFailed ? (theme === 'dark' ? 'text-red-400 bg-red-950/30' : 'text-red-700 bg-red-50') : (theme === 'dark' ? 'text-gray-400 bg-gray-700/50' : 'text-gray-500 bg-gray-50')}`}>
