@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "WildCat Tunnel",
-  description: "Alternative CIT-U Student Portal",
+  title: "ALT WITS",
+  description: "UPD BY RALPH",
   icons: {
     icon: "/icon.png", 
   },
